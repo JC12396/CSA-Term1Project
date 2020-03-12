@@ -13,7 +13,7 @@ import java.util.Random;
 public class HangmanUI {
     private static String[] wordBank = {"isis", "no", "bruh", "you", "tropical", "ope"};
     private static String word = wordBank[(int) (Math.random() * wordBank.length)];
-    private static String hide = new String(new char[wordBank.length]).replace("\0", "*");
+    private static String hide = new String(new char[wordBank.length]).replace("\0", "_");
     private static int incorrect = 0;
     private static int trys = 0;
     private static int wins = 0;
@@ -28,8 +28,6 @@ public class HangmanUI {
 
     public static void main(String[] args)
     {
-
-
         while (incorrect < 5 && hide.contains("*")) {
             System.out.println("Please guess a letter in the word! >> ");
             System.out.println(hide);
@@ -130,7 +128,6 @@ public class HangmanUI {
                 System.out.println("|      | | ");
                 System.out.println("|");
                 System.out.println("____________");
-
                 losses++;
                 try
                 {
@@ -152,10 +149,7 @@ public class HangmanUI {
                 {
                     System.out.println("Error Message: " + e);
                 }
-
-
             }
 
         }
-
 }
